@@ -1,4 +1,9 @@
+// backend/src/modules/teams/teams.module.ts
 import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+import { Team, TeamSchema } from './schemas/team.schema';
 
-@Module({})
+@Module({
+  imports: [MongooseModule.forFeature([{ name: Team.name, schema: TeamSchema }])],
+})
 export class TeamsModule {}
