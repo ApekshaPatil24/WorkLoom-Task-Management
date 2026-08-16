@@ -22,7 +22,9 @@ import { ResourcesModule } from '../resources/resources.module';
     LabelsModule,
     CommentsModule,
     ResourcesModule,
+
     JwtModule.registerAsync({
+      global: true,
       imports: [ConfigModule],
       inject: [ConfigService],
 
@@ -32,6 +34,7 @@ import { ResourcesModule } from '../resources/resources.module';
             expiresIn: (config.get<string>('JWT_EXPIRES_IN') ?? '7d') as JwtSignOptions['expiresIn'],
         },
     }),
+
     }),
   ],
   controllers: [AuthController],
