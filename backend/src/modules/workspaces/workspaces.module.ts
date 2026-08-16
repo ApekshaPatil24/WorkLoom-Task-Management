@@ -5,5 +5,6 @@ import { Workspace, WorkspaceSchema } from './schemas/workspace.schema';
 
 @Module({
   imports: [MongooseModule.forFeature([{ name: Workspace.name, schema: WorkspaceSchema }])],
+  exports: [MongooseModule], 
 })
 export class WorkspacesModule {}

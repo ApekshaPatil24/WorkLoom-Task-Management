@@ -5,5 +5,6 @@ import { Label, LabelSchema } from './schemas/label.schema';
 
 @Module({
   imports: [MongooseModule.forFeature([{ name: Label.name, schema: LabelSchema }])],
+  exports: [MongooseModule],
 })
 export class LabelsModule {}
